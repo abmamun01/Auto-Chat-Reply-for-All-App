@@ -1,0 +1,26 @@
+name = "fhitku-reply"
+main = "src/worker.js"
+compatibility_date = "2026-11-06"
+workers_dev = true
+preview_urls = false
+
+[vars]
+REPLIES_ENABLED = "false"
+COMMENTS_ENABLED = "false"
+# Set only after reviewing current Meta API version/permissions and receiving approval.
+META_GRAPH_VERSION = ""
+FACEBOOK_PAGE_ID = ""
+INSTAGRAM_ACCOUNT_ID = ""
+SHOPIFY_STORE_DOMAIN = "v1gfk7-q0.myshopify.com"
+SHOPIFY_API_VERSION = "2026-10"
+
+[[durable_objects.bindings]]
+name = "INBOX"
+class_name = "Inbox"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Inbox"]
+
+[observability]
+enabled = false
